@@ -50,7 +50,7 @@ console.log(sym1([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 
 
 
 
-
+// option1
 function updateInventory(arr1, arr2) {
   // All inventory must be accounted for or you're fired!
 const result1 = []
@@ -59,14 +59,21 @@ if(arr1.length > 0) {
    const ss = arr2.find((i) => { if(i[1] === x[1]) { return x[0] +=i[0] } });
    if(!ss && arr2.length) result1.push(arr2[y]);
   }); 
-return [...arr1,...result1].sort(this.compare);
+return [...arr1,...result1].sort(compare);
 } else {
-return [...arr2].sort(this.compare);
-
+return [...arr2].sort(compare);
+}
 }
 
+// option2
+function updateInventory1(arr1, arr2) {
+arr2.forEach((e,i)=>{
+  const x = arr1.map(e=>e[1]).indexOf(e[1]);
+  if(x==-1) arr1.push(e);
+  else arr1[x][0]+=e[0];
+});
+return arr1.sort(compare);
 }
-
 function compare(a, b) {
 if (a[1] > b[1]) return 1;
 if (b[1] > a[1]) return -1;
@@ -77,6 +84,7 @@ return 0;
 
 // output 
 console.log(updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], []))
+console.log(updateInventory1([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], []))
 console.log(updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]],
  [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]))
 console.log(updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]))
