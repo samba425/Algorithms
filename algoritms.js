@@ -67,10 +67,10 @@ return [...arr2].sort(compare);
 
 // option2
 function updateInventory1(arr1, arr2) {
-arr2.forEach((e,i)=>{
-  const x = arr1.map(e=>e[1]).indexOf(e[1]);
-  if(x==-1) arr1.push(e);
-  else arr1[x][0]+=e[0];
+arr2.forEach((item,i)=>{
+  const x = arr1.map(e=>e[1]).indexOf(item[1]);
+  if(x==-1) arr1.push(item);
+  else arr1[x][0]+=item[0];
 });
 return arr1.sort(compare);
 }
