@@ -206,5 +206,5 @@ function pairwise(arr, arg) {
   return re;
 }
 
-console.log(this.pairwise([1, 4, 2, 3, 6], 7)); // 8
-console.log(this.pairwise([], 100)); // 0
+console.log(pairwise([1, 4, 2, 3, 6], 7)); // 8
+console.log(pairwise([], 100)); // 0
