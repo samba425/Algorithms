@@ -179,14 +179,23 @@ function pairwise(arr, arg) {
   let pairs = [];
   arr.forEach((val, i) => {
     if (pairs.length === 0) {
-      pairs.push([{ value: val, index: i }]);
+      pairs.push([{
+        value: val,
+        index: i
+      }]);
     } else {
       for (let j = 0; j < pairs.length; j++) {
         if (pairs[j][0].value === arg - arr[i] && pairs[j].length === 1) {
-          pairs[j].push({ value: arr[i], index: i });
+          pairs[j].push({
+            value: arr[i],
+            index: i
+          });
           break;
         } else if (j === pairs.length - 1) {
-          pairs.push([{ value: arr[i], index: i }]);
+          pairs.push([{
+            value: arr[i],
+            index: i
+          }]);
           break;
         }
       }
