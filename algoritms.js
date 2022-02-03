@@ -232,7 +232,7 @@ solution:
 var twoSum = function(nums, target) { 
     for (var i = 0; i <= nums.length; i++) {
       for (var j = 0; j < nums.length; j++) {
-        if (nums[i] != nums[j] && nums[j] && nums[i]) {
+        if (i != j && (nums[j] && nums[i] || nums[j] == 0 || nums[i] == 0)) {
           if (nums[i] + nums[j] == target) {
           return [i,j];
           }
