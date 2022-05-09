@@ -1,3 +1,4 @@
+# 1nd method
 # Utility function to print a matrix
 def printMatrix(matrix,n):
     arra = []
@@ -22,3 +23,15 @@ def printMatrix(matrix,n):
 # Driver Code
 M =[[1,2,3,4,5],[9,6,3,8,6],[1,3,6,8,4],[3,7,4,9,0],[7,5,3,4,5]]
 # printMatrix(M,5)
+
+# 2nd method
+import numpy as np
+arr = [[1,2,3,4,5],[9,6,3,8,6],[1,3,6,8,4],[3,7,4,9,0],[7,5,3,4,5]]
+mat = np.array(arr)
+N = 5
+sumArray = []
+for i in range(N-1, -N, -1):
+    arr1 = []
+    arr = np.diag(mat, k=i)
+    sumArray.append(sum(arr))
+print(sumArray )
