@@ -467,7 +467,7 @@
 
       ```javascript
       var object = {
-           name: "Sudheer"
+           name: "samba"
            age: 34
       };
 
@@ -485,7 +485,7 @@
         this.name = name;
         this.age = 21;
       }
-      var object = new Person("Sudheer");
+      var object = new Person("samba");
       ```
 
    5. **Function constructor with prototype:**
@@ -494,7 +494,7 @@
 
       ```javascript
       function Person() {}
-      Person.prototype.name = "Sudheer";
+      Person.prototype.name = "samba";
       var object = new Person();
       ```
 
@@ -530,7 +530,7 @@
         }
       }
 
-      var object = new Person("Sudheer");
+      var object = new Person("samba");
       ```
 
    7. **Singleton pattern:**
@@ -539,7 +539,7 @@
 
       ```javascript
       var object = new (function () {
-        this.name = "Sudheer";
+        this.name = "samba";
       })();
       ```
 
@@ -4456,7 +4456,7 @@
        return "Hello, " + name;
      }
 
-     let user = "Sudheer";
+     let user = "samba";
 
      console.log(greeting(user));
      ```
@@ -7540,14 +7540,11 @@
 
      ```js
      console.group("User Details");
-     console.log("name: Sudheer Jonna");
+     console.log("name: samba");
      console.log("job: Software Developer");
 
      // Nested Group
-     console.group("Address");
-     console.log("Street: Commonwealth");
-     console.log("City: Los Angeles");
-     console.log("State: California");
+     console.group("Address"); 
 
      console.groupEnd();
      ```
